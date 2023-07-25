@@ -40,18 +40,24 @@
     <header>
       <div class="container">
         <div class="row">
-          <h3>Pesan di Sini</h3>
-          <ul class="d-flex">
-            <li>All</li>
-            <li>Appetizer</li>
-            <li>Main Course</li>
-            <li>Dessert</li>
-          </ul>
+          <div class="col">
+            <h3>Pesan di Sini</h3>
+            <ul class="d-flex">
+              <li>All</li>
+              <li>Appetizer</li>
+              <li>Main Course</li>
+              <li>Dessert</li>
+            </ul>
+          </div>
+          <button type="button" class="cart">
+            <span class="material-symbols-outlined"> shopping_cart </span>
+          </button>
         </div>
       </div>
     </header>
     <!-- end header -->
 
+    <!-- main menu -->
     <main>
       <div class="container">
         <div class="row">
@@ -318,6 +324,25 @@
         </div>
       </div>
     </main>
+    <!-- close main menu -->
+
+    <!-- detail cart -->
+    <section id="detail__cart">
+      <div class="container">
+        <figcaption class="header__cart d-flex">
+          <button type="button" class="back__cart">⬅</button>
+          <p>Name Customer</p>
+        </figcaption>
+        <figcaption class="position__customer">
+          <h3>No. Meja</h3>
+          <p>Nomor Meja</p>
+        </figcaption>
+        <div class="row"></div>
+        <button type="button" class="process d-flex">Proses Pesanan</button>
+        <button type="button" class="cancel d-flex">Batalkan Pesanan</button>
+      </div>
+    </section>
+    <!-- end detail cart -->
 
     <!-- 👇 javascript code file 👇 -->
     <script src="./src/js/index.js"></script>

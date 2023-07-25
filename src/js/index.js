@@ -35,6 +35,19 @@ function qty(params) {
   });
 }
 
+// Back to Cart
+document.querySelector(".back__cart").addEventListener("click", () => {
+  document.getElementById("detail__cart").classList.add("back");
+});
+
 // card eksekusi function
 qty(0);
 qty(1);
+qty(2);
+qty(3);
+qty(4);
+qty(5);
+qty(6);
+qty(7);
+qty(8);
+qty(9);
