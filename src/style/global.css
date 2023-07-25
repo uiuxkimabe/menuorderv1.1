@@ -1,0 +1,144 @@
+/*? global clearing */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap");
+
+*,
+html,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+:root {
+  /* color */
+  --basic: #fff;
+  --dark: #1e1e1e;
+}
+
+.container {
+  width: 90%;
+  height: 100%;
+  margin: auto;
+}
+
+.row {
+  width: 100%;
+  height: 100%;
+}
+
+.d-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.d-grid {
+  display: grid;
+}
+
+/* section welcome*/
+
+#welcome {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(30, 30, 30, 0.8);
+}
+
+#welcome .row {
+  justify-content: center;
+}
+
+#welcome form {
+  background-color: var(--basic);
+  padding: 1em;
+}
+
+/* end section welcome */
+
+/* header */
+
+header {
+  padding: 1em 0;
+  position: sticky;
+  top: 0;
+  border-bottom: 1px solid #e4e4e4;
+}
+
+header ul {
+  width: 300px;
+  justify-content: space-around;
+  list-style: none;
+  margin-top: 8px;
+}
+
+/* end header */
+
+/* main */
+
+main {
+  margin-top: 1em;
+}
+
+main .row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1em;
+}
+
+main .col {
+  border-radius: 10px;
+  border: 1px solid #c1c1c1;
+}
+
+main .col figure {
+  gap: 1em;
+  font-size: 0.8rem;
+}
+
+main .col figure input,
+.btn button,
+button {
+  width: 30px;
+  height: 30px;
+  text-align: center;
+}
+
+main .col figure input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+main .btn {
+  margin-top: 1em;
+}
+
+.menu .addToCart {
+  justify-content: center;
+  margin-right: 1em;
+  width: 50px;
+  height: 50px;
+  background-color: var(--dark);
+  color: var(--basic);
+  border: none;
+  border-radius: 5px;
+}
+
+.photo {
+  width: 100px;
+  height: 100px;
+  justify-content: center;
+  background-color: #e4e4e4;
+  border-radius: 10px 0 0 10px;
+}
+
+.photo span {
+  color: #c1c1c1;
+}
+
+/* end main */
