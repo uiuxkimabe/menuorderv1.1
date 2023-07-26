@@ -9,6 +9,7 @@ const addBtn = document.querySelectorAll(".addQty");
 // Menambahkan & Mengurangi Qty Pesanan
 function qty(params) {
   let count = 0;
+  // Menambahkan Qty
   addBtn[params].addEventListener("click", () => {
     let result = count + 1;
     count++;
@@ -21,6 +22,7 @@ function qty(params) {
       alert("Pesanan Ada Sudah Maksimal");
     }
   });
+  // Mengurangi Qty
   minBtn[params].addEventListener("click", () => {
     let result = count - 1;
     count--;
@@ -51,3 +53,37 @@ qty(6);
 qty(7);
 qty(8);
 qty(9);
+
+// Filter Menu
+const filterBtn = document.querySelectorAll("header ul li");
+const filterItems = document.querySelectorAll("main .menu");
+// destructuring filter button
+const [all, appetizer, mainCourse, dessert] = filterBtn;
+
+// Filter Menu
+filterItems.forEach((element) => {
+  all.addEventListener("click", () => {
+    element.style.height = element.classList.contains("all") ? "100%" : "0";
+    element.style.border = "none";
+    console.info("all");
+  });
+  appetizer.addEventListener("click", () => {
+    element.style.height = element.classList.contains("appetizer")
+      ? "100%"
+      : "0";
+    element.style.border = "none";
+    console.info("appetizer");
+  });
+  mainCourse.addEventListener("click", () => {
+    element.style.height = element.classList.contains("mainCourse")
+      ? "100%"
+      : "0";
+    element.style.border = "none";
+    console.info("mainCourse");
+  });
+  dessert.addEventListener("click", () => {
+    element.style.height = element.classList.contains("dessert") ? "100%" : "0";
+    element.style.border = "none";
+    console.info("dessert");
+  });
+});
