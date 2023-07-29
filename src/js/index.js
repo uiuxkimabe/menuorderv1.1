@@ -5,6 +5,7 @@
 const minBtn = document.querySelectorAll(".minQty");
 const qtyValue = document.querySelectorAll(".qtyValue");
 const addBtn = document.querySelectorAll(".addQty");
+const addToCart = document.querySelectorAll(".addToCart");
 
 // Menambahkan & Mengurangi Qty Pesanan
 function qty(params) {
@@ -35,6 +36,14 @@ function qty(params) {
       alert(`Jumlah Pesanan Anda Masih ${count}`);
     }
   });
+  addToCart.forEach((element) => {
+    element.addEventListener("click", () => {
+      let result = count + 1;
+      count++;
+      document.querySelector(".cart .qtyInCart").innerHTML = result;
+      console.info("okeg");
+    });
+  });
 }
 
 // Back to Cart
@@ -63,27 +72,25 @@ const [all, appetizer, mainCourse, dessert] = filterBtn;
 // Filter Menu
 filterItems.forEach((element) => {
   all.addEventListener("click", () => {
-    element.style.height = element.classList.contains("all") ? "100%" : "0";
-    element.style.border = "none";
+    element.style.display = element.classList.contains("all") ? "flex" : "none";
     console.info("all");
   });
   appetizer.addEventListener("click", () => {
-    element.style.height = element.classList.contains("appetizer")
-      ? "100%"
-      : "0";
-    element.style.border = "none";
+    element.style.display = element.classList.contains("appetizer")
+      ? "flex"
+      : "none";
     console.info("appetizer");
   });
   mainCourse.addEventListener("click", () => {
-    element.style.height = element.classList.contains("mainCourse")
-      ? "100%"
-      : "0";
-    element.style.border = "none";
+    element.style.display = element.classList.contains("mainCourse")
+      ? "flex"
+      : "none";
     console.info("mainCourse");
   });
   dessert.addEventListener("click", () => {
-    element.style.height = element.classList.contains("dessert") ? "100%" : "0";
-    element.style.border = "none";
+    element.style.display = element.classList.contains("dessert")
+      ? "flex"
+      : "none";
     console.info("dessert");
   });
 });
