@@ -64,26 +64,26 @@ const [all, appetizer, mainCourse, dessert] = filterBtn;
 filterItems.forEach((element) => {
   all.addEventListener("click", () => {
     element.style.height = element.classList.contains("all") ? "100%" : "0";
-    element.style.border = "none";
+    
     console.info("all");
   });
   appetizer.addEventListener("click", () => {
     element.style.height = element.classList.contains("appetizer")
       ? "100%"
       : "0";
-    element.style.border = "none";
+    
     console.info("appetizer");
   });
   mainCourse.addEventListener("click", () => {
     element.style.height = element.classList.contains("mainCourse")
       ? "100%"
       : "0";
-    element.style.border = "none";
+    
     console.info("mainCourse");
   });
   dessert.addEventListener("click", () => {
     element.style.height = element.classList.contains("dessert") ? "100%" : "0";
-    element.style.border = "none";
+    
     console.info("dessert");
   });
 });
