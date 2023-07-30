@@ -40,16 +40,14 @@ function qty(params) {
     element.addEventListener("click", () => {
       let result = count + 1;
       count++;
-      document.querySelector(".cart .qtyInCart").innerHTML = result;
-      console.info("okeg");
+      const qtyInCart = document.querySelector(".cart .qtyInCart");
+      if ((result) => 1) {
+        qtyInCart.innerHTML = result;
+        qtyInCart.style.display = "block";
+      }
     });
   });
 }
-
-// Back to Cart
-document.querySelector(".back__cart").addEventListener("click", () => {
-  document.getElementById("detail__cart").classList.add("back");
-});
 
 // card eksekusi function
 qty(0);
@@ -91,26 +89,42 @@ filterItems.forEach((element) => {
     element.style.display = element.classList.contains("dessert")
       ? "flex"
       : "none";
-    element.style.height = element.classList.contains("all") ? "100%" : "0";
-
     console.info("all");
   });
   appetizer.addEventListener("click", () => {
-    element.style.height = element.classList.contains("appetizer")
-      ? "100%"
-      : "0";
-
+    element.style.display = element.classList.contains("dessert")
+      ? "flex"
+      : "none";
     console.info("appetizer");
   });
   mainCourse.addEventListener("click", () => {
-    element.style.height = element.classList.contains("mainCourse")
-      ? "100%"
-      : "0";
-
+    element.style.display = element.classList.contains("dessert")
+      ? "flex"
+      : "none";
     console.info("mainCourse");
   });
   dessert.addEventListener("click", () => {
-    element.style.height = element.classList.contains("dessert") ? "100%" : "0";
+    element.style.display = element.classList.contains("dessert")
+      ? "flex"
+      : "none";
     console.info("dessert");
   });
+});
+
+// Btn Cart
+
+const detailCart = document.getElementById("detail__cart");
+const btnBackCart = document.querySelector(".back__cart");
+const btnCart = document.querySelector("header button.cart");
+
+btnCart.addEventListener("click", () => {
+  detailCart.classList.add("show");
+  console.info("oke");
+});
+
+console.info(btnBackCart);
+
+btnBackCart.addEventListener("click", () => {
+  detailCart.classList.remove("show");
+  console.info("oke hapus");
 });
