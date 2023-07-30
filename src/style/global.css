@@ -207,15 +207,16 @@ main .btn {
 }
 
 #detail__cart .header__cart {
-  justify-content: flex-start;
-  gap: 10px;
-}
-
-.position__customer {
   position: sticky;
   top: 16px;
   padding: 1em 0;
   border-bottom: 1px solid #c1c1c1;
+}
+
+#detail__cart ul {
+  justify-content: space-around;
+  list-style: none;
+  padding: 10px;
 }
 
 #detail__cart .row {
