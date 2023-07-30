@@ -91,6 +91,26 @@ filterItems.forEach((element) => {
     element.style.display = element.classList.contains("dessert")
       ? "flex"
       : "none";
+    element.style.height = element.classList.contains("all") ? "100%" : "0";
+
+    console.info("all");
+  });
+  appetizer.addEventListener("click", () => {
+    element.style.height = element.classList.contains("appetizer")
+      ? "100%"
+      : "0";
+
+    console.info("appetizer");
+  });
+  mainCourse.addEventListener("click", () => {
+    element.style.height = element.classList.contains("mainCourse")
+      ? "100%"
+      : "0";
+
+    console.info("mainCourse");
+  });
+  dessert.addEventListener("click", () => {
+    element.style.height = element.classList.contains("dessert") ? "100%" : "0";
     console.info("dessert");
   });
 });
