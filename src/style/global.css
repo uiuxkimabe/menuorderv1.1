@@ -1,6 +1,6 @@
 /*? global clearing */
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap");
 
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap");
 *,
 html,
 body {
@@ -220,7 +220,7 @@ main .btn {
 }
 
 #detail__cart .row {
-  height: 400px;
+  height: 300px;
   margin: 1em 0;
   border-top: 1px solid #c1c1c1;
   border-bottom: 1px solid #c1c1c1;

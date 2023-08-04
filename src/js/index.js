@@ -8,33 +8,33 @@ const addBtn = document.querySelectorAll(".addQty");
 
 // Menambahkan & Mengurangi Qty Pesanan
 function qty(params) {
-    let count = 0;
-    // Menambahkan Qty
-    addBtn[params].addEventListener("click", () => {
-        let result = count + 1;
-        count++;
-        qtyValue[params].value = result;
-        if (count > 0) {
-            minBtn[params].disabled = false;
-        }
-        if (count >= 10) {
-            addBtn[params].disabled = true;
-            alert("Pesanan Ada Sudah Maksimal");
-        }
-    });
-    // Mengurangi Qty
-    minBtn[params].addEventListener("click", () => {
-        let result = count - 1;
-        count--;
-        qtyValue[params].value = result;
-        if (count < 10) {
-            addBtn[params].disabled = false;
-        }
-        if (count <= 0) {
-            minBtn[params].disabled = true;
-            alert(`Jumlah Pesanan Anda Masih ${count}`);
-        }
-    });
+  let count = 0;
+  // Menambahkan Qty
+  addBtn[params].addEventListener("click", () => {
+    let result = count + 1;
+    count++;
+    qtyValue[params].value = result;
+    if (count > 0) {
+      minBtn[params].disabled = false;
+    }
+    if (count >= 10) {
+      addBtn[params].disabled = true;
+      alert("Pesanan Ada Sudah Maksimal");
+    }
+  });
+  // Mengurangi Qty
+  minBtn[params].addEventListener("click", () => {
+    let result = count - 1;
+    count--;
+    qtyValue[params].value = result;
+    if (count < 10) {
+      addBtn[params].disabled = false;
+    }
+    if (count <= 0) {
+      minBtn[params].disabled = true;
+      alert(`Jumlah Pesanan Anda Masih ${count}`);
+    }
+  });
 }
 
 // card eksekusi function
@@ -57,46 +57,46 @@ const [all, appetizer, mainCourse, dessert] = filterBtn;
 
 // Filter Menu Function
 filterItems.forEach((element) => {
-    all.addEventListener("click", () => {
-        element.style.display = element.classList.contains("all") ? "flex" : "none";
-        console.info("all");
-    });
-    appetizer.addEventListener("click", () => {
-        element.style.display = element.classList.contains("appetizer") ?
-            "flex" :
-            "none";
-        console.info("appetizer");
-    });
-    mainCourse.addEventListener("click", () => {
-        element.style.display = element.classList.contains("mainCourse") ?
-            "flex" :
-            "none";
-        console.info("mainCourse");
-    });
-    dessert.addEventListener("click", () => {
-        element.style.display = element.classList.contains("dessert") ?
-            "flex" :
-            "none";
-        console.info("all");
-    });
-    appetizer.addEventListener("click", () => {
-        element.style.display = element.classList.contains("dessert") ?
-            "flex" :
-            "none";
-        console.info("appetizer");
-    });
-    mainCourse.addEventListener("click", () => {
-        element.style.display = element.classList.contains("dessert") ?
-            "flex" :
-            "none";
-        console.info("mainCourse");
-    });
-    dessert.addEventListener("click", () => {
-        element.style.display = element.classList.contains("dessert") ?
-            "flex" :
-            "none";
-        console.info("dessert");
-    });
+  all.addEventListener("click", () => {
+    element.style.display = element.classList.contains("all") ? "flex" : "none";
+    console.info("all");
+  });
+  appetizer.addEventListener("click", () => {
+    element.style.display = element.classList.contains("appetizer")
+      ? "flex"
+      : "none";
+    console.info("appetizer");
+  });
+  mainCourse.addEventListener("click", () => {
+    element.style.display = element.classList.contains("mainCourse")
+      ? "flex"
+      : "none";
+    console.info("mainCourse");
+  });
+  dessert.addEventListener("click", () => {
+    element.style.display = element.classList.contains("dessert")
+      ? "flex"
+      : "none";
+    console.info("all");
+  });
+  appetizer.addEventListener("click", () => {
+    element.style.display = element.classList.contains("dessert")
+      ? "flex"
+      : "none";
+    console.info("appetizer");
+  });
+  mainCourse.addEventListener("click", () => {
+    element.style.display = element.classList.contains("dessert")
+      ? "flex"
+      : "none";
+    console.info("mainCourse");
+  });
+  dessert.addEventListener("click", () => {
+    element.style.display = element.classList.contains("dessert")
+      ? "flex"
+      : "none";
+    console.info("dessert");
+  });
 });
 
 // Btn Cart
@@ -111,55 +111,56 @@ let arrKosong = [];
 
 // function add item to detail cart
 function addItems(params) {
-    const createFigcaption = document.createElement("figcaption");
-    const isiFigcaption = document.createElement("div");
-    const qtyDiv = document.createElement("div");
-    const innerQtyDiv = document.createTextNode(setQty[params].value);
-    const subTotal = document.createElement("div");
-    const innerSubTotal = document.createTextNode("0");
-    const delBtn = document.createElement("button");
-    const innerDelBtn = document.createTextNode("Hapus");
-    isiFigcaption.style.padding = "1em";
-    isiFigcaption.style.background = "black";
-    isiFigcaption.setAttribute("id", params);
-    createFigcaption.appendChild(isiFigcaption);
-    createFigcaption.setAttribute("class", "d-flex");
-    detailCartRow.appendChild(createFigcaption);
-    qtyDiv.appendChild(innerQtyDiv);
-    createFigcaption.appendChild(qtyDiv);
-    subTotal.appendChild(innerSubTotal);
-    createFigcaption.appendChild(subTotal);
-    delBtn.appendChild(innerDelBtn);
-    delBtn.setAttribute("class", params);
-    createFigcaption.appendChild(delBtn);
+  const createFigcaption = document.createElement("figcaption");
+  const isiFigcaption = document.createElement("div");
+  const qtyDiv = document.createElement("div");
+  const innerQtyDiv = document.createTextNode(setQty[params].value);
+  const subTotal = document.createElement("div");
+  const innerSubTotal = document.createTextNode("0");
+  const delBtn = document.createElement("button");
+  const innerDelBtn = document.createTextNode("Hapus");
+  isiFigcaption.style.padding = "1em";
+  isiFigcaption.style.background = "black";
+  isiFigcaption.setAttribute("id", params);
+  createFigcaption.appendChild(isiFigcaption);
+  createFigcaption.setAttribute("class", "d-flex");
+  detailCartRow.appendChild(createFigcaption);
+  qtyDiv.appendChild(innerQtyDiv);
+  createFigcaption.appendChild(qtyDiv);
+  subTotal.appendChild(innerSubTotal);
+  createFigcaption.appendChild(subTotal);
+  delBtn.appendChild(innerDelBtn);
+  delBtn.setAttribute("class", params);
+  createFigcaption.appendChild(delBtn);
 
-    console.info(delBtn);
-    delBtn.addEventListener("click", () => {
-        createFigcaption.remove();
-        isiFigcaption.remove();
-        qtyDiv.remove();
-        subTotal.remove();
-        delBtn.remove();
-    });
-    // return createFigcaption;
+  console.info(delBtn);
+  delBtn.addEventListener("click", () => {
+    createFigcaption.remove();
+    isiFigcaption.remove();
+    qtyDiv.remove();
+    subTotal.remove();
+    delBtn.remove();
+    addToCart[params].disabled = false;
+    addToCart[params].style.background = "#1e1e1e";
+    arrKosong.shift();
+    console.info(arrKosong);
+  });
+  // return createFigcaption;
 }
 
 function cartCounter(params) {
-    let count = 0; // <-jangan gunakan count number ambil dari jumlah figcaption dibawah row
-    addToCart.forEach((element) => {
-        element.addEventListener("click", () => {
-            let result = count + 1;
-            count++;
-            qtyInCart.innerHTML = result;
-            element.disabled = true;
-            element.style.background = "grey";
-        });
+  addToCart.forEach((element) => {
+    element.addEventListener("click", () => {
+      element.disabled = true;
+      element.style.background = "grey";
     });
-    addToCart[params].addEventListener("click", () => {
-        addItems(params);
-        arrKosong.push(count);
-        console.info(arrKosong);
-    });
+  });
+  addToCart[params].addEventListener("click", () => {
+    addItems(params);
+    arrKosong.push(0);
+    qtyInCart.innerHTML = arrKosong.length;
+    console.info(arrKosong);
+  });
 }
 
 cartCounter(0);
@@ -175,10 +176,10 @@ cartCounter(9);
 
 // Menampilkan Detail Cart
 btnCart.addEventListener("click", () => {
-    detailCart.classList.add("show");
+  detailCart.classList.add("show");
 });
 
 // Menutup Detail Cart
 btnBackCart.addEventListener("click", () => {
-    detailCart.classList.remove("show");
+  detailCart.classList.remove("show");
 });
