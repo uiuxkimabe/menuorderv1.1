@@ -106,7 +106,9 @@ const btnCart = document.querySelector("header button.cart");
 const detailCartRow = document.querySelector("#detail__cart .row");
 const setQty = document.querySelectorAll(".menu figcaption .btn input");
 const addToCart = document.querySelectorAll(".addToCart");
-const qtyInCart = document.querySelector(".qtyInCart");
+const qtyInCart = document.querySelector("header .qtyInCart");
+
+console.info(addToCart);
 
 // function add item to detail cart
 function addItems(params) {
@@ -116,8 +118,11 @@ function addItems(params) {
   const innerQtyDiv = document.createTextNode(setQty[params].value);
   const subTotal = document.createElement("div");
   const innerSubTotal = document.createTextNode("0");
+  const delBtn = document.createElement("button");
+  const innerDelBtn = document.createTextNode("Hapus");
   isiFigcaption.style.padding = "1em";
   isiFigcaption.style.background = "black";
+  isiFigcaption.setAttribute("id", params);
   createFigcaption.appendChild(isiFigcaption);
   createFigcaption.setAttribute("class", "d-flex");
   detailCartRow.appendChild(createFigcaption);
@@ -125,17 +130,25 @@ function addItems(params) {
   createFigcaption.appendChild(qtyDiv);
   subTotal.appendChild(innerSubTotal);
   createFigcaption.appendChild(subTotal);
-  console.info("oke");
+  delBtn.appendChild(innerDelBtn);
+  createFigcaption.appendChild(delBtn);
+
+  console.info(delBtn);
   // return createFigcaption;
 }
 
 function cartCounter(params) {
   let count = 0;
+  addToCart.forEach((element) => {
+    element.addEventListener("click", () => {
+      let result = count + 1;
+      count++;
+      qtyInCart.innerHTML = result;
+      element.disabled = true;
+      element.style.background = "grey";
+    });
+  });
   addToCart[params].addEventListener("click", () => {
-    let result = count + 1;
-    count++;
-    qtyInCart.style.display = "block";
-    qtyInCart.innerHTML = result;
     addItems(params);
   });
 }
