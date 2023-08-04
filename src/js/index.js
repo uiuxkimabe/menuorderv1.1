@@ -143,9 +143,9 @@ function addItems(params) {
     addToCart[params].disabled = false;
     addToCart[params].style.background = "#1e1e1e";
     arrKosong.shift();
+    qtyInCart.innerHTML = arrKosong.length;
     console.info(arrKosong);
   });
-  // return createFigcaption;
 }
 
 function cartCounter(params) {
